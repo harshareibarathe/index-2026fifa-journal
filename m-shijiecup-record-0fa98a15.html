@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 信息索引 · 资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9fafc;
+            color: #1f2937;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+
+        .page {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 3rem 0 4.5rem;
+        }
+
+        /* hero 区 */
+        .hero {
+            text-align: left;
+            margin-bottom: 4rem;
+            padding-top: 1.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 0.75rem;
+            color: #0f172a;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #4b5563;
+            max-width: 580px;
+        }
+
+        .hero .sub {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 1.2rem;
+            border-left: 3px solid #3b82f6;
+            padding-left: 1rem;
+            background: #f1f5f9;
+            border-radius: 0 6px 6px 0;
+            padding: 0.6rem 1rem;
+        }
+
+        /* 通用标题 */
+        section {
+            margin-bottom: 3.2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem;
+            color: #0f172a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #1e293b;
+        }
+
+        /* 优势区 —— 卡片极简 */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e9edf2;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+
+        .card small {
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        /* 说明区 —— 窄文 */
+        .explain p {
+            margin-bottom: 1.2rem;
+            font-size: 0.98rem;
+        }
+
+        .explain ul {
+            list-style: none;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .explain li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+            color: #2d3b4d;
+        }
+
+        .explain li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            background: #f1f5f9;
+            border-left: 4px solid #2563eb;
+            padding: 0.8rem 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            margin-bottom: 1.6rem;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .faq-item .a {
+            color: #475569;
+            font-size: 0.92rem;
+            padding-left: 0.2rem;
+        }
+
+        .faq-item .a a {
+            color: #2563eb;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .faq-item .a a:hover {
+            color: #1d4ed8;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #6b7280;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.4rem 1.2rem;
+        }
+
+        .footer-links a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px dotted #94a3b8;
+        }
+
+        .footer-links a:hover {
+            color: #1e40af;
+            border-bottom: 1px solid #2563eb;
+        }
+
+        .footer-note {
+            margin-top: 1.2rem;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .page {
+                padding: 2rem 0 3rem;
+            }
+            .card {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .advantages-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* 内联链接风格一致 */
+        .inline-link {
+            color: #2563eb;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .inline-link:hover {
+            color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- hero -->
+        <header class="hero">
+            <h1>世界杯<br>资料与索引</h1>
+            <p>围绕历届赛事、球队数据与历史记录，做一次克制的信息梳理。这里没有实时比分，但有足够安静的叙述背景。</p>
+            <div class="sub">
+                整理自开放档案 · 仅做索引参考
+            </div>
+        </header>
+
+        <!-- 优势区：资料整理的切入点 -->
+        <section>
+            <h2>为什么需要一份整理</h2>
+            <div class="advantages-grid">
+                <div class="card">
+                    <h3>时间线聚合</h3>
+                    <p>将分散在多个平台的赛程、结果、阵容节点归拢为线性脉络，便于回顾与对照。</p>
+                    <small>覆盖 1930–2026</small>
+                </div>
+                <div class="card">
+                    <h3>非官方视角</h3>
+                    <p>不依赖实时推送或商业数据，仅提取可公开验证的基本信息，减少信息过载。</p>
+                    <small>以中立为原则</small>
+                </div>
+                <div class="card">
+                    <h3>结构化简述</h3>
+                    <p>每届赛事精简为核心记录：举办国、冠军、决赛比分、最佳射手，足够建立认知坐标。</p>
+                </div>
+                <div class="card">
+                    <h3>持续补完</h3>
+                    <p>页面随新赛年逐步更新，保持索引的有效性与完整性，不追求即时，但求准确。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 说明区: 切入角度 —— 从资料整理和索引出发 -->
+        <section class="explain">
+            <h2>这个页面如何组织信息</h2>
+            <p>当你想了解 <a href="https://m-shijiecup.com" class="inline-link">世界杯</a> 的历史轨迹或某届细节，直接搜索往往得到大量碎片。这里尝试用最轻量的方式做信息索引：</p>
+            <ul>
+                <li>每届赛事单独条目，包含时间、地点、决赛队伍、比分、金靴。</li>
+                <li>球队历史战绩汇总表（按参赛次数、最佳名次排序）。</li>
+                <li>标志性比赛与冷门记录单独摘录，不夹杂观点分析。</li>
+                <li>所有数据均可溯源至国际足联官方档案或可信赛事报告。</li>
+            </ul>
+            <div class="highlight">
+                索引不是百科，不追求面面俱到，只提供最必要的锚点。如果你需要深入查阅，可以以此为起点，再寻找原始资料。
+            </div>
+            <p style="margin-top: 1rem;">这份整理尤其适合做赛前背景回顾、写稿资料查证，以及纯粹的兴趣浏览。所有内容以中文呈现，名词尽量采用通译。</p>
+        </section>
+
+        <!-- FAQ 摘要（不照搬常见问答格式，给出索引侧重点） -->
+        <section>
+            <h2>常见疑问摘要</h2>
+            <div class="faq-item">
+                <div class="q">Q：这里的数据更新频率是？</div>
+                <div class="a">通常每届赛事结束后一个月内更新核心条目。中途修正主要依赖勘误反馈，不设固定刷新周期。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">Q：是否包含预选赛与各洲数据？</div>
+                <div class="a">仅收录决赛圈阶段信息，预选赛因范围过大暂不纳入。部分洲际附加赛结果会在对应届次备注中提及。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">Q：为什么没有实时资讯或直播链接？</div>
+                <div class="a">本页定位是静态度索引，不追踪赛程变动或实时比分。如果你需要即时信息，建议配合其他专用服务使用。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">Q：我想引用这里的数据，如何标注？</div>
+                <div class="a">直接注明「资料整理自 <a href="https://m-shijiecup.com">世界杯</a>」即可，无需额外授权。但建议你同时核对原始来源。</div>
+            </div>
+        </section>
+
+        <!-- 底部链接与版权说明 -->
+        <footer class="footer-links">
+            <span>📋 索引页 · 持续修订</span>
+            <a href="https://m-shijiecup.com">世界杯</a>
+            <span>/</span>
+            <span>数据参考 FIFA 档案</span>
+            <span>/</span>
+            <a href="#">关于本站</a>
+            <span>/</span>
+            <a href="#">反馈</a>
+            <div class="footer-note">
+                本页面为独立整理，不隶属于任何官方组织。内容仅供个人学习与信息参考。
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
