@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再次回望：世界杯的叙事与轨迹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f3f1ed;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            color: #1e2a2e;
+            line-height: 1.75;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 1rem 3.5rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+        }
+
+        /* 开场短句：孤句留白 */
+        .opening {
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #2f4047;
+            border-left: 3px solid #b68c6e;
+            padding-left: 1.2rem;
+            margin-bottom: 2.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .opening em {
+            font-style: italic;
+            color: #6d5343;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #2c373b;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+
+        .intro-text a {
+            color: #8a5a3a;
+            text-decoration: none;
+            border-bottom: 1px dashed #b68c6e;
+            transition: border 0.2s, color 0.2s;
+        }
+
+        .intro-text a:hover {
+            color: #3f2b1e;
+            border-bottom: 1px solid #3f2b1e;
+        }
+
+        /* 特点列表: 叙述式卡片，无图标 */
+        .feature-section {
+            margin: 2.8rem 0 2.2rem;
+            padding: 0.2rem 0;
+            border-top: 1px solid #d5cdc1;
+            border-bottom: 1px solid #d5cdc1;
+        }
+
+        .feature-item {
+            padding: 1.2rem 0 1.2rem 0;
+            border-bottom: 1px solid #e2dbd0;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2f4047;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-desc {
+            font-size: 0.95rem;
+            color: #3e4e54;
+        }
+
+        .feature-desc a {
+            color: #8a5a3a;
+            text-decoration: none;
+            border-bottom: 1px dotted #cbb6a0;
+        }
+
+        .feature-desc a:hover {
+            color: #1e2a2e;
+            border-bottom: 1px solid #1e2a2e;
+        }
+
+        /* 温和结尾 —— 收藏与持续关注的提醒 */
+        .closing-note {
+            margin: 2.2rem 0 1.8rem;
+            font-size: 1rem;
+            background: #ece7df;
+            padding: 1.6rem 2rem;
+            border-radius: 4px;
+            color: #2c373b;
+        }
+
+        .closing-note strong {
+            font-weight: 600;
+            color: #3b2a1d;
+        }
+
+        .closing-note a {
+            color: #8a5a3a;
+            text-decoration: none;
+            border-bottom: 1px dashed #b68c6e;
+        }
+
+        .closing-note a:hover {
+            color: #2f4047;
+            border-bottom: 1px solid #6d5343;
+        }
+
+        /* 小提示/FAQ摘要 (极简) */
+        .subtle-faq {
+            margin: 1.8rem 0 2rem;
+            padding: 0 0.5rem;
+        }
+
+        .faq-summary {
+            font-size: 0.9rem;
+            color: #5a6c72;
+            border-left: 2px solid #cbb6a0;
+            padding-left: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-summary span {
+            display: block;
+            font-weight: 500;
+            color: #3e4e54;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-summary a {
+            color: #7f624b;
+            text-decoration: underline dotted;
+        }
+
+        .faq-summary a:hover {
+            text-decoration: underline solid;
+            color: #2f4047;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d5cdc1;
+            margin: 0.8rem 0;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #7a898f;
+            text-align: left;
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #d5cdc1;
+            letter-spacing: 0.01em;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.5rem 0.8rem 2.5rem;
+            }
+            .opening {
+                font-size: 1.3rem;
+                padding-left: 1rem;
+            }
+            .closing-note {
+                padding: 1.2rem 1.2rem;
+            }
+            .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .opening {
+                font-size: 1.9rem;
+                padding-left: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 开场短句：静谧而带有回响 -->
+        <div class="opening">
+            有些页面，值得再次打开。<br>
+            就像某个秋夜，你又一次点开关于<em>世界杯</em>的旧叙事。
+        </div>
+
+        <!-- 承接段落：从再次访问说起，融入收藏与持续关注 -->
+        <div class="intro-text">
+            <p>
+                很多时候，我们访问一个网站，不是为了新鲜，而是为了确认一段记忆或追踪一脉信息。这个名为<a href="https://cnweb-united26.com">世界杯</a>的页面，便有这样的质地。它不追逐瞬间的热闹，而是将关于足球盛会的资料、分析与时间线，安静地存放在那里。当你想要重新梳理一届赛事的脉络，或是寻找某个被遗忘的细节，它总会是你浏览记录里那个熟悉的坐标。
+            </p>
+            <p>
+                正因如此，收藏它的链接，或是将其置于浏览器的书签栏，便成了一种自然而然的习惯。我们不仅是在收藏一个网址，更是在收藏一种随时可以返回的语境。每次大赛周期前后，你或许都会想起这里——它不会频繁推送提醒，但当你需要时，它一直存在。
+            </p>
+        </div>
+
+        <!-- 特点列表：以叙述口吻列举三个侧面 -->
+        <div class="feature-section">
+            <div class="feature-item">
+                <div class="feature-title">回顾的结构</div>
+                <div class="feature-desc">
+                    页面内容按照赛事年代与主题组织，从预选赛阶段到决赛夜的战术拆解，皆有相对清晰的索引。这种结构让老球迷和新读者都能较快定位到自己关心的段落，不必在冗长信息中迷失。
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">记录的温度</div>
+                <div class="feature-desc">
+                    不同于通稿式的快讯，这里的文字更倾向于沉淀。它保留着比赛日当天的氛围描述、球员的细微表情，以及那些在比分之外容易被忽略的片段。重读时，仿佛能听见当时看台的声音。
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">持续的更新</div>
+                <div class="feature-desc">
+                    网站并未因一届赛事结束而停更。它会周期性地补充新的解读视角、修正旧有数据，并整合来自不同来源的讨论。对于持续关注<a href="https://cnweb-united26.com">世界杯</a>动态的读者来说，这里是一个可以反复回来查看的基点。
+                </div>
+            </div>
+        </div>
+
+        <!-- 温和结尾：收藏与关注的轻提醒 -->
+        <div class="closing-note">
+            <strong>如果你觉得这里值得停留</strong>，不妨将它加入浏览器的收藏夹，或是在笔记中记下它的地址。下一次当你想要重温某场经典比赛，或是想了解某支球队的晋级之路时，直接从这里开始，会比四处搜索更从容。持续的关注，往往始于一次安静的收藏。
+        </div>
+
+        <!-- FAQ 摘要风格：简短的常见疑问回应 -->
+        <div class="subtle-faq">
+            <div class="faq-summary">
+                <span>— 关于页面更新频率</span>
+                网站没有固定的推送日程，但每逢大赛周期或有重要内容补充时，首页会有所体现。你可以偶尔回访，或通过书签来保持联结。
+            </div>
+            <div class="faq-summary">
+                <span>— 关于内容来源</span>
+                所有信息均基于公开赛事资料、官方统计与长期观察整理而成，力求平实可靠。若有疑问，可以对照<a href="https://cnweb-united26.com">世界杯</a>页面中标注的参考来源进一步核实。
+            </div>
+        </div>
+
+        <!-- 安静的脚注 -->
+        <div class="footer-note">
+            页面内容持续整理 · 回访即是一种阅读方式
+        </div>
+    </div>
+</body>
+</html>
