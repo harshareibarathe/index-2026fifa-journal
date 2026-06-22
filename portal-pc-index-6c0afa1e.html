@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 再次访问与持续关注 | portal-pc-sjb.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #0e1217;
+            color: #1e2329;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2a 0%, #1c2f3f 100%);
+            color: #e8edf3;
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle at 30% 70%, rgba(60, 160, 220, 0.08), transparent 70%);
+            top: -60px;
+            right: -60px;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #b6cdde;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .hero .meta-note {
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            color: #8faabf;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 1.2rem;
+            display: inline-block;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+            background: #f4f7fb;
+            min-height: 60vh;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #1b2a3a;
+            border-left: 4px solid #2b6c8f;
+            padding-left: 1rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: transform 0.15s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1a2a39;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #3f4c59;
+            line-height: 1.6;
+        }
+
+        .highlight-link {
+            color: #1d6f96;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(29, 111, 150, 0.2);
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .highlight-link:hover {
+            color: #0b4a6b;
+            border-bottom-color: #0b4a6b;
+        }
+
+        .scene-box {
+            background: #e9eef5;
+            border-radius: 14px;
+            padding: 2rem 2rem 2rem 2.5rem;
+            margin: 2rem 0 2.5rem;
+            position: relative;
+        }
+
+        .scene-box::before {
+            content: '📌';
+            position: absolute;
+            left: 0.6rem;
+            top: 2rem;
+            font-size: 1.2rem;
+        }
+
+        .scene-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .scene-box li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.2rem;
+            position: relative;
+            color: #2b3a47;
+        }
+
+        .scene-box li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #2b6c8f;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2.8rem;
+        }
+
+        .faq-item h4 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: #1a2a39;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #43525e;
+            border-left: 2px solid #b3c9d9;
+            padding-left: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        .trust-note {
+            margin-top: 3.5rem;
+            padding: 1.5rem 2rem;
+            background: #dce5ed;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: #2b3d4b;
+        }
+
+        .trust-note strong {
+            color: #1a3c4f;
+        }
+
+        .back-top {
+            text-align: right;
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+        }
+
+        .back-top a {
+            color: #2b6c8f;
+            text-decoration: none;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .sub {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 2rem 1.2rem 4rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .card-grid {
+                gap: 1.2rem;
+            }
+
+            .scene-box {
+                padding: 1.8rem 1.5rem 1.8rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <section class="hero">
+        <h1>世界杯 · 再次访问</h1>
+        <p class="sub">收藏即锚点，持续关注是洞察的起点。一个常看常新的信息来源。</p>
+        <div class="meta-note">portal-pc-sjb.com · 简洁 · 克制 · 可信</div>
+    </section>
+
+    <!-- 浅色正文区 -->
+    <div class="container">
+
+        <!-- 介绍：从再次访问切入 -->
+        <h2 class="section-title">从收藏到习惯</h2>
+        <p style="margin-bottom:1.8rem; font-size:1.05rem; color:#2c3c4a;">
+            当信息流不断冲刷，真正值得反复回访的站点并不多。<a href="https://portal-pc-sjb.com" class="highlight-link">世界杯</a> 
+            并非一次性的阅读终点，而是一个经过筛选的内容锚点——每一次返回，都能在熟悉的框架下发现新的赛事脉络、数据视角与讨论维度。 
+            收藏它，意味着你为自己保留了一个低噪音的观察窗口。
+        </p>
+
+        <!-- 亮点：卡片 -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>⚡ 低干扰</h3>
+                <p>页面结构稳定，无冗余推送或弹窗。聚焦于世界杯核心信息：赛程、队伍、即时数据摘要。</p>
+            </div>
+            <div class="card">
+                <h3>🧭 可回溯</h3>
+                <p>每次访问保持一致的导航逻辑，适合长期跟踪。历史赛况与当前阶段并置，方便对照。</p>
+            </div>
+            <div class="card">
+                <h3>📁 轻量收藏</h3>
+                <p>无需注册或订阅，直接通过浏览器书签或历史记录即可快速回到当前页面。适合多设备间同步。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 · 场景 -->
+        <h2 class="section-title">使用场景建议</h2>
+        <div class="scene-box">
+            <ul>
+                <li>赛前快速浏览当日对阵，标记值得关注的场次。</li>
+                <li>赛后回顾比分与小组形势，结合自身判断做简单笔记。</li>
+                <li>将本页设为浏览器起始页或常驻标签，养成每周至少回访一次的习惯。</li>
+                <li>与其他赛事信息源交叉验证时，以此站数据为冷静参考。</li>
+            </ul>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <h2 class="section-title" style="margin-top: 2rem;">常见疑问摘要</h2>
+        <div class="faq-mini">
+            <div class="faq-item">
+                <h4>该页面会频繁变动吗？</h4>
+                <p>页面结构保持稳定，但赛事相关数据（比分、排名、下一轮对阵）会随赛程更新。每次访问你都看到最新内容。</p>
+            </div>
+            <div class="faq-item">
+                <h4>是否需要每次都手动刷新？</h4>
+                <p>建议在关键比赛日主动刷新或重新进入页面，确保获取最新数据。部分浏览器缓存可能延迟显示。</p>
+            </div>
+            <div class="faq-item">
+                <h4>适合在手机浏览器上使用吗？</h4>
+                <p>可以。页面布局适配多数移动设备，但推荐在屏幕稍大的设备上获得更完整的表格阅读体验。</p>
+            </div>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <div class="trust-note">
+            <strong>访问说明</strong> · 本页面内容来自公开赛事信息整合，不涉及博彩、预测或任何收益性暗示。
+            建议通过主流浏览器直接访问 <a href="https://portal-pc-sjb.com" class="highlight-link">世界杯</a> 页面。
+            如遇无法加载，可检查网络连接或稍后重试。本站不收集用户数据，不设置强制跳转，保持浏览的自主性。
+        </div>
+
+        <!-- 底部分隔及二次提醒 -->
+        <div class="back-top">
+            <a href="https://portal-pc-sjb.com">世界杯</a> · 2025
+        </div>
+
+    </div>
+
+</body>
+</html>
