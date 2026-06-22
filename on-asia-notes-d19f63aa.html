@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识库 · 世界杯 · on-asia-sjb.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f2f4f7;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* 头部 */
+        .site-header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .site-header h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #1e2a3a;
+            background: #ffffffd9;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 0.3rem 2rem;
+            border-radius: 60px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        .site-header p {
+            margin-top: 0.75rem;
+            color: #4a5b6b;
+            font-size: 1.05rem;
+        }
+
+        /* 卡片网格 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.8rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 960px) {
+            .grid-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e0e4ea;
+            border-radius: 20px;
+            padding: 1.6rem 1.5rem 1.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.02);
+            transition: box-shadow 0.15s, transform 0.1s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 22px -8px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            line-height: 2.4rem;
+            text-align: center;
+            background: #eef1f5;
+            border-radius: 14px;
+            color: #2f3e4e;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0.6rem 0 0.25rem;
+            color: #1a293a;
+        }
+
+        .card p, .card .small-note {
+            font-size: 0.95rem;
+            color: #3f4e5e;
+            margin: 0.5rem 0 0.2rem;
+            flex: 1;
+        }
+
+        .card .small-note {
+            font-size: 0.85rem;
+            color: #6a7a8a;
+            margin-top: 0.5rem;
+            border-top: 1px dashed #dbe0e6;
+            padding-top: 0.5rem;
+        }
+
+        .card a {
+            color: #1a5e8c;
+            text-decoration: none;
+            border-bottom: 1px dotted #b3c4d4;
+            transition: border-color 0.15s;
+        }
+
+        .card a:hover {
+            border-bottom-style: solid;
+            border-color: #1a5e8c;
+        }
+
+        /* 特色区域：说明 + 提示 */
+        .info-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .info-item {
+            background: #ffffff;
+            border: 1px solid #e0e4ea;
+            border-radius: 20px;
+            padding: 1.6rem 1.6rem 1.8rem;
+            flex: 1 1 280px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+        }
+
+        .info-item h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.9rem;
+            color: #1d2b3b;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .info-item p {
+            font-size: 0.97rem;
+            color: #2e3f50;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item .highlight-link {
+            font-weight: 500;
+        }
+
+        .info-item .highlight-link a {
+            color: #1a5e8c;
+            text-decoration: none;
+            border-bottom: 1px solid #bccddc;
+        }
+
+        .info-item .highlight-link a:hover {
+            border-bottom-style: double;
+        }
+
+        .tip-badge {
+            background: #e3e9f0;
+            border-radius: 30px;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: #2b4053;
+            margin-left: 0.6rem;
+            white-space: nowrap;
+        }
+
+        /* FAQ 摘要 */
+        .faq-section {
+            margin-top: 0.8rem;
+            background: #ffffff;
+            border: 1px solid #e0e4ea;
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem 2rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+        }
+
+        .faq-section h2 {
+            font-weight: 500;
+            font-size: 1.35rem;
+            margin-bottom: 1.2rem;
+            color: #1a293a;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eaeef3;
+            padding: 0.9rem 0 0.8rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            font-weight: 600;
+            color: #1f3142;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #3f5164;
+            margin: 0;
+        }
+
+        .faq-item p a {
+            color: #1a5e8c;
+            text-decoration: none;
+            border-bottom: 1px dotted #bacbdb;
+        }
+
+        .faq-item p a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding: 1.5rem 0 0.5rem;
+            border-top: 1px solid #dce2e9;
+            font-size: 0.85rem;
+            color: #5b6d7d;
+            text-align: center;
+            letter-spacing: 0.01em;
+        }
+
+        .footer-note a {
+            color: #2c5f85;
+            text-decoration: none;
+            border-bottom: 1px dotted #a7bccc;
+        }
+
+        .footer-note a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.5rem 0.8rem;
+            }
+            .site-header h1 {
+                font-size: 1.7rem;
+                padding: 0.3rem 1.2rem;
+            }
+            .card {
+                padding: 1.2rem;
+            }
+            .info-item {
+                padding: 1.2rem;
+            }
+            .faq-section {
+                padding: 1.2rem 1.2rem 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-container">
+    <header class="site-header">
+        <h1>⚽ 世界杯 · 知识库</h1>
+        <p>稳定入口 · 说明 · 目录感卡片 · 持续更新</p>
+    </header>
+
+    <!-- 卡片区：目录感布局 -->
+    <div class="grid-cards">
+        <div class="card">
+            <span class="card-icon">📚</span>
+            <h3>赛事脉络</h3>
+            <p>从预选赛到决赛阶段，历年赛制、分组与晋级规则。这里梳理了历届世界杯的演变与关键节点，方便快速了解背景。</p>
+            <div class="small-note">← 知识索引 · 持续丰富</div>
+        </div>
+        <div class="card">
+            <span class="card-icon">🏆</span>
+            <h3>冠军与记录</h3>
+            <p>历届冠军队伍、金靴得主、经典决赛的数据与故事。球队及球员的历史记录，为深度阅读提供参考。</p>
+            <div class="small-note">数据源 · 不定期校正</div>
+        </div>
+        <div class="card">
+            <span class="card-icon">🌏</span>
+            <h3>主办与场馆</h3>
+            <p>历届主办国、承办城市与体育场概览。包括申办背景、场馆容量与赛事遗产等实用信息。</p>
+            <div class="small-note">地理与建筑 · 细节补充中</div>
+        </div>
+        <div class="card">
+            <span class="card-icon">📖</span>
+            <h3>规则与演变</h3>
+            <p>越位、换人、加时赛、点球大战等规则沿革，以及VAR、半自动越位等新技术的引入时间线。</p>
+            <div class="small-note">参考国际足联官方资料</div>
+        </div>
+        <div class="card">
+            <span class="card-icon">📊</span>
+            <h3>数据与统计</h3>
+            <p>参赛次数、进球分布、最大比分、连胜纪录等数据集合。适合快速查询和横向比较。</p>
+            <div class="small-note">统计范围 · 1930–2022</div>
+        </div>
+        <div class="card">
+            <span class="card-icon">🔎</span>
+            <h3>相关链接</h3>
+            <p>本站收录了与世界杯相关的活动与信息。如果你对赛事背景或当前动态感兴趣，可以前往 <a href="https://on-asia-sjb.com">世界杯</a> 页面继续浏览。</p>
+            <div class="small-note">外部参考 · 独立整理</div>
+        </div>
+    </div>
+
+    <!-- 说明区 + 提示区 -->
+    <div class="info-block">
+        <div class="info-item">
+            <h2>📌 页面说明</h2>
+            <p>本页以知识卡片和分区形式，整理世界杯相关的基础信息、历史脉络与实用资料。内容保持中立、克制，适合作为初步了解和日常查阅的起点。</p>
+            <p>所有条目均会定期核对，但无法保证完全无疏漏。重要信息建议交叉验证。</p>
+            <p class="highlight-link">→ 更多整合内容，可参考 <a href="https://on-asia-sjb.com">世界杯</a> 专题。</p>
+        </div>
+        <div class="info-item">
+            <h2>💡 使用提示 <span class="tip-badge">阅览建议</span></h2>
+            <p>各卡片为独立模块，可按需阅读。数据与规则部分尽量引用通用来源，如有更新会同步修订。</p>
+            <p>如果你在查找特定年份或球队，建议结合站内索引和外部资料一起使用。遇到不一致的地方，欢迎反馈。</p>
+            <p style="margin-top:0.6rem;">— 本知识库偏向框架性内容，深度文章将在后续逐步补充。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要（相关信息区） -->
+    <div class="faq-section">
+        <h2>❓ 常见问题摘要</h2>
+        <div class="faq-item">
+            <strong>世界杯多久举办一次？</strong>
+            <p>每四年一届，自1930年起（1942、1946年因战争停办）。下一届将在2026年由美国、加拿大、墨西哥联合举办。</p>
+        </div>
+        <div class="faq-item">
+            <strong>哪里可以查询完整的历届战绩？</strong>
+            <p>本站整理了主要数据卡片，但完整战绩建议同时参考国际足联官网。你也可以在 <a href="https://on-asia-sjb.com">世界杯</a> 页面中找到更多汇总信息。</p>
+        </div>
+        <div class="faq-item">
+            <strong>规则变化对比赛影响大吗？</strong>
+            <p>比较显著的变化包括1998年扩大为32队、2026年扩大为48队，以及VAR的引入。本知识库的「规则与演变」卡片有简要梳理。</p>
+        </div>
+        <div class="faq-item">
+            <strong>页面会更新吗？</strong>
+            <p>会。内容会根据可靠来源不定期补充和修正。如果你发现错误或过时信息，欢迎提醒。</p>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        <p>知识库入口 · 基于公开资料整理 · 非官方页面 · 内容仅供参考</p>
+        <p style="margin-top:0.3rem;">主站 <a href="https://on-asia-sjb.com">世界杯</a> · 保持独立与克制</p>
+    </div>
+</div>
+</body>
+</html>
